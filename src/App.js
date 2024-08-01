@@ -17,19 +17,15 @@ function App() {
     setPointOfCharacterA(1)
     setPointOfCharacterB(1)
   }
-  if (pointOfChracterA >= 10) {
+  if (pointOfChracterA >= 10 || pointOfChracterB >= 10) {
     Swal.fire({
-      title: 'Character A win',
-      icon: "success"
-    });
-    resetCharacterPoint()
-  } else if (pointOfChracterB >= 10) {
-    Swal.fire({
-      title: 'Character B win',
-      icon: "success"
-    });
+      title: `Character ${pointOfChracterA >= 10 ? 'A' : 'B'} Win`,
+      text: `Character ${pointOfChracterA >= 10 ? 'A' : 'B'} đã đạt điểm 10 trước`,
+      icon: 'success'
+    })
     resetCharacterPoint()
   }
+
   return (
     <div className="container ">
       <div>
