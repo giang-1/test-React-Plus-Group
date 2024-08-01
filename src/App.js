@@ -6,8 +6,8 @@ function App() {
   const [pointOfChracterA, setPointOfCharacterA] = useState(1)
   const [pointOfChracterB, setPointOfCharacterB] = useState(1)
   const ramdomPlusPointForCharacter = () => {
-    let a = Math.floor(Math.random() * 10)
-    if (a < 5) {
+    let ramdomNumber = Math.floor(Math.random() * 10)
+    if (ramdomNumber < 5) {
       setPointOfCharacterA(pointOfChracterA + 1)
     } else {
       setPointOfCharacterB(pointOfChracterB + 1)
@@ -20,12 +20,11 @@ function App() {
   if (pointOfChracterA >= 10 || pointOfChracterB >= 10) {
     Swal.fire({
       title: `Character ${pointOfChracterA >= 10 ? 'A' : 'B'} Win`,
-      text: `Character ${pointOfChracterA >= 10 ? 'A' : 'B'} đã đạt điểm 10 trước`,
+      text: `Character ${pointOfChracterA >= 10 ? 'A' : 'B'} scored 10 points first`,
       icon: 'success'
     })
     resetCharacterPoint()
   }
-
   return (
     <div className="container ">
       <div>
